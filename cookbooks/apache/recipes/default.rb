@@ -16,7 +16,61 @@ end
 
 service "httpd" do
 	action [:start,:enable]
-#	action :stop
-#	action :restart
-#	action :enable
 end
+
+directory "/home/chefuser" do
+	action :create
+end
+
+user "chefuser" do
+	comment "user for chef"
+	home "/home/chefuser"
+	action :create
+end
+
+group "chefgroup" do
+	members "chefuser"
+	action :create	
+end
+
+remote_file "/opt/chef-12.21.1-1.el7.x86_64.rpm" do
+	source "https://packages.chef.io/files/stable/chef/12.21.1/el/7/chef-12.21.1-1.el7.x86_64.rpm" 
+	action :create
+end
+
+template "/etc/hosts" do
+	source "myhosts.erb"
+	action :create
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
