@@ -34,7 +34,8 @@ group "chefgroup" do
 end
 
 remote_file "/opt/chef-12.21.1-1.el7.x86_64.rpm" do
-	source "https://packages.chef.io/files/stable/chef/12.21.1/el/7/chef-12.21.1-1.el7.x86_64.rpm" 
+#	source "https://packages.chef.io/files/stable/chef/12.21.1/el/7/chef-12.21.1-1.el7.x86_64.rpm" 
+	source "file:///home/chefuser/chef-12.21.1-1.el7.x86_64.rpm"	
 	action :create
 end
 
@@ -43,34 +44,9 @@ template "/etc/hosts" do
 	action :create
 end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+execute "comment for execute" do
+	cwd "/home"
+	command "chown -R chefuser:chefgroup chefuser"
+	user "root"
+end
 
