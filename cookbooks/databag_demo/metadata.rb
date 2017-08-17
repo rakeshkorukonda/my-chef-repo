@@ -1,7 +1,7 @@
-name             'apache'
+name             'databag_demo'
 maintainer       'YOUR_COMPANY_NAME'
 maintainer_email 'YOUR_EMAIL'
 license          'All rights reserved'
-description      'Installs/Configures apache'
+description      'Installs/Configures databag_demo'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.3.0'
+version          '0.1.0'
